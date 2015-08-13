@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>BXD Miner</title>
+<script>
+var connection
+window.addEventListener("load", function () {
+                connection = new WebSocket("ws://"+window.location.hostname+":8081")
+                connection.onopen = function () {
+                        console.log("Connection opened")
+                        connection.send("connected")
+                        document.getElementById("form").onsubmit = function (event) {
+                                var cmd = document.getElementById("cmd")
+                                if (cmd.value)
+                                        connection.send(cmd.value)
+                                cmd.value = ""
+                                event.preventDefault()
+                        }       
+                }
+                connection.onclose = function () {
+                        console.log("Connection closed")
+                }
+                connection.onerror = function () {
+                        console.error("Connection error")
+                }
+                connection.onmessage = function (event) {
+			document.getElementById("status").innerText = event.data.toString();
+                }
+})
+</script>
+</head>
+
+<body>
+<form id="form">
+<pre id=status></pre>
+</form>
+</body>
+</html>
+

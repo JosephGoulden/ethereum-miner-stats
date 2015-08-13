@@ -1,0 +1,26 @@
+{
+  "name": "ethereum-miner-stats",
+  "version": "1.0.0",
+  "description": "",
+  "main": "status.js",
+  "dependencies": {
+    "bignumber.js": "^2.0.7",
+    "nodejs-websocket": "^1.2.1",
+    "web3": "^0.8.1",
+    "npm": "^2.13.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/JosephGoulden/ethereum-miner-stats.git"
+  },
+  "author": "Joseph Goulden",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JosephGoulden/ethereum-miner-stats/issues"
+  },
+  "homepage": "https://github.com/JosephGoulden/ethereum-miner-stats#readme"
+}
